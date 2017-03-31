@@ -1,0 +1,59 @@
+@charset "utf-8";
+*{
+	font: 12px/1.3em Arial, 'Istok Web', sans-serif;
+	color: #000;
+	text-align: center;
+}
+
+.youitems{
+	font:  bold italic 22px/1.3em Arial, 'Istok Web', sans-serif;
+	color: #0F0;
+}
+
+.backtoshopping{
+	font:  bold italic 22px/1.3em Arial, 'Istok Web', sans-serif;
+	color: #CCC;
+}
+
+a:hover{
+ color: #0f0;
+}
+
+.basketbig {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+    width: auto; /* Ўирина таблицы */
+    border: 4px double black; /* –амка вокруг таблицы */
+    border-collapse: collapse; /* ќтображать только одинарные линии */
+   }
+.basketbig    th { 
+   
+    background: #ccc; /* ÷вет фона ¤чеек */
+    padding: 5px; /* ѕол¤ вокруг содержимого ¤чеек */
+    border: 1px solid black; /* √раница вокруг ¤чеек */
+   }
+.basketbig    td { 
+    padding: 5px; /* ѕол¤ вокруг содержимого ¤чеек */
+    border: 1px solid black; /* √раница вокруг ¤чеек */
+   }
+   
+.personaldata{
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+    width: auto; /* Ўирина таблицы */
+}
+   
+#priceall{
+	font: 20px/1.3em Arial, 'Istok Web', sans-serif;
+	color: #F00;
+}
+
+.goodsbasketclearone:hover{
+	cursor: pointer;
+}
+
+.goods2>tr>td{
+	color: #f00;
+}

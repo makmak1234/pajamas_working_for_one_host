@@ -1,0 +1,923 @@
+@charset "utf-8";
+* {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px;
+	 -moz-box-sizing: border-box;           /* украшательство */
+     -webkit-box-sizing: border-box;        /* украшательство */
+      box-sizing: border-box;                /* украшательство */
+}
+body {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: normal; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; FONT-FAMILY: Tahoma, "Droid Sans", Arial, sans-serif; FONT-SIZE: 12px; TOP: 0px; PADDING-TOP: 0px; LEFT: 0px;
+}
+
+header, section, footer, aside, nav, article {
+	display: block;/* Блочный элемент */
+}
+
+UL {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+LI {
+	PADDING-BOTTOM: 0px; MARGIN: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+
+
+IFRAME {
+	BORDER-BOTTOM: 0px; BORDER-LEFT: 0px; BORDER-TOP: 0px; BORDER-RIGHT: 0px
+}
+A {
+	BORDER-BOTTOM: medium none; BORDER-LEFT: medium none; OUTLINE-STYLE: none; OUTLINE-COLOR: invert; OUTLINE-WIDTH: medium; BORDER-TOP: medium none; BORDER-RIGHT: medium none; TEXT-DECORATION: none
+}
+EM {
+	FONT-STYLE: normal; FONT-WEIGHT: normal
+}
+/*BODY {
+	 color: #9f9e9e;
+  font: 14px/1.3em Arial, 'Istok Web', sans-serif;
+  background: #f3c94b url(/img/design/bg14.jpg) top center;
+}*/
+
+.goodsbasketfontmb{
+	text-align: center;
+	position: fixed;
+	right: 0px;
+	top: 0px;
+	margin-right: 100px;
+	/*float: right;*/
+	color: #000;
+	list-style: none;
+	cursor:pointer;
+	opacity:0.7;
+	/*background:#ccc;*/
+	/*outline: 1px solid #0f0;font: 12px/1.3em Arial, 'Istok Web', sans-serif;*/
+}
+
+.m-cart-fullmb{
+	font-size:1.2em;
+	background:#329b1d;background-clip:padding-box;border-radius:0 0 10px 10px;padding-left:0px;z-index:40;
+	display:inline-block;
+	padding:5px;
+}/*width:17.231em;height:4.308em;*/
+	
+.goodsbasketclearmb{
+	position:relative;
+	margin-bottom: 10px;
+	margin-right: 10px;
+	z-index:999;
+	cursor:pointer;
+	padding:0px;
+}
+
+#formregis{
+	display: none;
+	position: absolute;
+	text-align: center;
+	width: 200px;
+	left: 50%;
+	margin-left: -100px;
+	margin-top: 100px;
+	background: #CCCC66;
+	background-clip: padding-box; border-radius: 10px 10px 10px 10px;
+	z-index:999;
+}
+
+#valcode{
+	display: none;
+}
+
+#formregis input{
+	margin: 5px;
+}
+
+#incorrval{
+	color: #f00;
+}
+
+#ajaxload{
+	display: none;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	right: 40px;
+	top: 40px;
+}
+
+#ajaxload2{
+	display: none;
+	width: 20px;
+	height: 20px;
+	position: absolute;
+	left: 50px;
+	bottom: 10px;
+}
+
+.clformregis{
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.clformregis:hover{
+	cursor: pointer;
+}
+
+#valpass{
+	color: #f00;
+	font-size: 1.4em;
+}
+
+#entrance-nav {
+	position: absolute;
+	/*BACKGROUND: url(nav-hover.png); WIDTH: 100px;*/ 
+	right: 5px;
+	top: 10px;
+	margin-right:5px; margin-bottom: 0px;
+} /*FLOAT: left;*/
+#entrance {
+	/*DISPLAY: inline; FLOAT: right; OVERFLOW: hidden*/
+} /*FLOAT: left;*/
+#entrance LI {
+	WIDTH: auto/*95px*/; DISPLAY: inline; FLOAT: left;  OVERFLOW: hidden
+}
+#entrance LI A {
+	TEXT-ALIGN: center; LINE-HEIGHT: 1; WIDTH: auto/*95px*/; padding-left: 25px; padding-right: 25px;/* Поля вокруг текста */ DISPLAY: block; FONT-FAMILY: Tahoma, Arial; COLOR: #fff; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+#entrance LI A:hover {
+	/*BACKGROUND: url(cherti3.gif)*/
+}
+
+#entrance LI  UL {
+	Z-INDEX: 99; POSITION: absolute; PADDING-BOTTOM: 7px; PADDING-LEFT: 7px; WIDTH: 100px; PADDING-RIGHT: 7px; VISIBILITY: hidden; PADDING-TOP: 7px
+}
+#entrance LI:hover UL {
+	VISIBILITY: visible;
+}
+#entrance LI:hover {
+	cursor: pointer;
+}
+
+#entrance LI UL LI {
+	WIDTH: 100px !important; HEIGHT: 40px
+}
+#entrance LI UL LI A {
+	TEXT-ALIGN: left; LINE-HEIGHT: 40px; PADDING-LEFT: 10px; WIDTH: 90px; HEIGHT: 40px; FONT-WEIGHT: normal
+}
+#entrance LI UL LI A:hover {
+	/*BACKGROUND: #2a73b7*/
+	text-decoration: underline;
+}
+
+
+
+
+#header {
+	WIDTH: auto; BACKGROUND:url(nav-hover.png) #cccccc repeat-x; HEIGHT: 85px; OVERFLOW: hidden
+}
+#header-main {
+	MARGIN: 0px auto; WIDTH: 1000px;
+}
+#header-top {
+	WIDTH: auto; HEIGHT: 37px; OVERFLOW: hidden; PADDING-TOP: 8px
+}
+#logo {
+	MARGIN: 5px 25px 0px 0px; WIDTH: 195px; FLOAT: left; HEIGHT: 40px
+}
+#header-nav {
+	BACKGROUND: url(nav-hover.png); WIDTH: 1100px; 
+	margin-left:auto; margin-right:auto;
+	
+} /*FLOAT: left;*/
+#nav {
+	DISPLAY: inherit; FLOAT: left; OVERFLOW: hidden;
+	width: auto;
+	margin-left:auto; margin-right:auto;
+} /*FLOAT: left;*/
+
+#nav LI {
+	WIDTH: auto/*95px*/; DISPLAY: inline; FLOAT: left;  OVERFLOW: hidden
+}
+#nav LI A {
+	TEXT-ALIGN: center; LINE-HEIGHT: 50px; WIDTH: auto/*95px*/; padding-left: 25px; padding-right: 25px;/* Поля вокруг текста */ DISPLAY: block; FONT-FAMILY: Tahoma, Arial; COLOR: #fff; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+#nav LI A:hover {
+	BACKGROUND: url(cherti3.gif)
+}
+#home {  /*#nav-focus-home */
+	BACKGROUND: url(nav-hover.png) 
+}
+/*#nav-focus-products*/ #products {
+	BACKGROUND: url(nav-hover.png)
+}
+/*#nav-focus-buynow*/ #buynow {
+	BACKGROUND: url(nav-hover.png)/*(../../images/nav-hover.png)*/
+}
+/*#nav-focus-downloads*/ #downloads {
+	BACKGROUND: url(nav-hover.png)
+}
+/*#nav-focus-language*/ #language {
+	BACKGROUND: url(nav-hover.png)
+}
+/*#nav-focus-support*/ #support {
+	BACKGROUND: url(nav-hover.png)
+}
+/*#nav-focus-think-tank*/ #think-tank {
+	BACKGROUND: url(nav-hover.png)
+}
+/*#nav-focus-company*/ #company {
+	BACKGROUND: url(nav-hover.png)
+}
+#nav LI  UL {
+	Z-INDEX: 99; POSITION: absolute; PADDING-BOTTOM: 7px; PADDING-LEFT: 7px; WIDTH: 230px; PADDING-RIGHT: 7px; BACKGROUND: #073d70; VISIBILITY: hidden; PADDING-TOP: 7px
+}
+#nav LI:hover UL {
+	VISIBILITY: visible
+}
+#nav LI UL LI {
+	WIDTH: 230px !important; HEIGHT: 40px
+}
+#nav LI UL LI A {
+	TEXT-ALIGN: left; LINE-HEIGHT: 40px; PADDING-LEFT: 10px; WIDTH: 220px; HEIGHT: 40px; FONT-WEIGHT: normal
+}
+#nav LI UL LI A:hover {
+	BACKGROUND: #2a73b7
+}
+#nav SPAN {
+	MARGIN: 12px 5px 0px 0px; WIDTH: 16px; BACKGROUND: url(../../images/products_icon/product-icon.png); FLOAT: left; HEIGHT: 16px
+}
+
+table {
+  border-collapse: collapse;
+}
+img {
+  border: 0;
+}
+a {
+  color: #d63d39;
+}
+a:hover {
+  color: #000;
+}
+
+.jcarousel-slider{
+	width: auto;
+	margin-top: 100px;
+	margin-left:auto; margin-right:auto;
+	/*outline: 5px solid #fff;*/
+}
+
+.jcarousel-container{
+	width: auto;
+	margin-top: 100px;
+	margin-left:auto; margin-right:auto;
+}
+
+
+
+.jcarousel-list{
+	overflow: hidden; 
+	position: relative; 
+	top: 0px; 
+	padding: 0px;
+	width: auto;
+	margin-left:auto; margin-right:auto;
+	/*outline: 5px solid #000;*/
+}/*width: 14090px;*/
+
+
+.jcarousel-slider ul li img {
+	display: block;
+	width: 400px;
+	height: 400px;
+	margin-bottom: 2em;
+}
+
+.imgrecord{
+	display: block;
+	width: 400px;
+	height: 420px;
+	margin-bottom: 2em;
+	float: left; 
+	list-style: none;
+}
+
+.imgrecord:hover{
+	cursor: pointer;
+}
+
+.slider__item-name {
+	position: relative;
+	display: block;
+	text-align: center;
+	margin: -1em 0 0 0;
+	font: italic 18px/1.3em Arial, 'Istok Web', sans-serif;
+	color: #d63d39;
+	
+}/*text-decoration: underline;*/
+
+.buttons{
+	position: relative;
+	width: 1000px;
+	height: 00px;
+	text-align: center;
+	margin-left:auto; margin-right:auto;
+	/*outline: 5px solid #000;*/
+}
+
+.buttons .left{
+	position: absolute;
+	width: auto;
+	left: 50%;
+	margin-left:-220px;
+	bottom: 50px;
+		/*линейность*/
+	
+}
+
+.buttons .right{	
+	position: absolute;
+	width: auto;
+	right: 50%;
+	margin-right:-220px;
+	bottom: 50px;
+}
+
+.buttons .pause{	
+	position: absolute;
+	width: auto;
+	right: 50%;
+	margin-right: 0px;
+	
+	/*font: italic 18px/1.3em Arial, 'Istok Web', sans-serif;*/
+}
+
+.buttons .pause::after{
+	content: "pause";
+}
+
+.buttons .pause:hover::after{
+	cursor: pointer;
+	content: attr(data-title);
+	z-index: 1;
+}
+
+.buttons .left_pause{ 
+	position: absolute;
+	width: auto;
+	left: 50%;
+	margin-left:-220px;
+	bottom: 120px;
+	opacity: 0.5;
+	display: none;
+	
+}
+
+.buttons .right_pause{
+	position: absolute;
+	width: auto;
+	right: 50%;
+	margin-right:-220px;
+	bottom: 120px;
+	opacity: 0.5;
+	display: none;
+}
+
+.buttons img{
+	width: 56px;
+	height: 56px;
+	-webkit-transition: transform 0.5s ease-out 0s alternate infinite;
+     -moz-transition: transform 0.5s ease-out 0s;
+     -o-transition: transform 0.5s ease-out 0s;
+}
+
+.buttons .left_pause > img, .buttons .right_pause > img{
+	width: 40px;
+	height: 40px;
+	-webkit-animation-name: flash_pause;
+    -moz-animation-name: flash_pause;
+    -o-animation-name: flash_pause;
+    animation-name: flash_pause;
+    /* Задержка перед началом */
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    /* Продолжительность анимации */
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+	/*повторение анимации*/
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-o-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	/*линейность*/
+	-webkit-animation-timing-function: ease-inout;
+	-moz-animation-timing-function: ease-inout;
+	-o-animation-timing-function: ease-inout;
+	animation-timing-function: ease-inout;
+	/*обратное воспроизв*/
+	-webkit-animation-direction: alternate;
+	-moz-animation-direction: alternate;
+	-o-animation-direction: alternate;
+	animation-direction: alternate;
+}
+
+.buttons img:hover {
+
+	cursor:pointer
+}
+
+@-webkit-keyframes flash {
+    0% {width: 100%; height: 100%;} 
+	100% {width: 120%; height: 120%;} 
+   /* 50% {width: 120%; height: 120%;} */
+   }
+@-moz-keyframes flash {
+    0% {width: 100%; height: 100%;} 
+	100% {width: 120%; height: 120%;} 
+   }
+@-o-keyframes flash {
+    0% {width: 100%; height: 100%;} 
+	100% {width: 120%; height: 120%;} 
+   }
+@keyframes flash {
+    0% {width: 100%; height: 100%;} 
+	100% {width: 120%; height: 120%;} 
+   }
+   
+.buttons .left >  img:hover, .buttons .right >  img:hover  {
+    -webkit-animation-name: flash;
+    -moz-animation-name: flash;
+    -o-animation-name: flash;
+    animation-name: flash;
+    /* Задержка перед началом */
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    /* Продолжительность анимации */
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+	/*повторение анимации*/
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-o-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	/*линейность*/
+	-webkit-animation-timing-function: ease-inout;
+	-moz-animation-timing-function: ease-inout;
+	-o-animation-timing-function: ease-inout;
+	animation-timing-function: ease-inout;
+	/*обратное воспроизв*/
+	-webkit-animation-direction: alternate;
+	-moz-animation-direction: alternate;
+	-o-animation-direction: alternate;
+	animation-direction: alternate;
+}
+
+@-webkit-keyframes flash_pause {
+    0% {opacity: 0.3; transform: scale(0.7, 0.7);} 
+	100% {opacity: 0.5; transform: scale(1, 1);}
+	
+   /* 50% {width: 120%; height: 120%;} */
+   }
+@-moz-keyframes flash_pause {
+    0% {opacity: 0.3; transform: scale(0.7, 0.7);} 
+	100% {opacity: 0.5; transform: scale(1, 1);}
+   }
+@-o-keyframes flash_pause {
+    0% {opacity: 0.3; transform: scale(0.7, 0.7);} 
+	100% {opacity: 0.5; transform: scale(1, 1);}
+   }
+@keyframes flash_pause {
+    0% {opacity: 0.3; transform: scale(0.7, 0.7);} 
+	100% {opacity: 0.5; transform: scale(1, 1);} 
+   }
+
+.choicegoodscont{
+	width: auto;
+	min-width: 1000px;
+	height:460px;
+	margin-top: 100px;
+	margin-left:auto; margin-right:auto;
+	/*outline: 5px solid #fff;*/
+}
+   
+.choicegoods{
+	float:left;
+	width: 420px;
+	/*height: 500px;*/
+	margin-bottom: 2em;
+	/*outline: 5px solid #000;*/
+}
+
+.choicegoods > img{
+	width: 400px;
+	height: 400px;
+	margin-bottom: 2em;
+} 
+
+.choicegoodssii{
+	float:left;
+	width:500px;
+	/*outline: 5px solid #000;*/
+}  
+
+.choicegoodsitem{
+	text-align: center;
+	font: italic 18px/1.3em Arial, 'Istok Web', sans-serif;
+	color: #d63d39;
+}
+
+.choicegoodsdescr{
+	
+	width: 500px;
+	/*height: 500px;*/
+	margin-bottom: 2em;
+	overflow: hidden;
+	font: italic 18px/1.3em Arial, 'Istok Web', sans-serif;
+	color: #d63d39;
+	/*outline: 5px solid #f00;*/
+}
+
+.choicegoodsprice{
+	margin-bottom: 2em;
+	overflow: hidden;
+	font: 18px/1.3em Arial, 'Istok Web', sans-serif;
+	color: #ff0;
+}
+
+.goodsbasketinp{
+	/*width: 10em;*/
+	margin-bottom: 2em;
+	overflow: hidden;
+	font: 18px/1.3em Arial, 'Istok Web', sans-serif;
+	color: #0F0;
+	Z-INDEX:999;
+	/*outline: 1px solid #f00;*/
+}
+
+.buylab{
+	/*width: 30px;*/
+	margin-bottom: 2em;
+	overflow: hidden;
+	font: 18px/1.3em Arial, 'Istok Web', sans-serif;
+	color: #0F0;
+	Z-INDEX:999;
+	/*outline: 1px solid #f00;*/
+}
+
+.goodsbasketclear{
+	
+	font: 18px/1.3em Arial, 'Istok Web', sans-serif;
+	color: #0F0;
+}
+
+.basketsmall{
+	Z-INDEX:1; 
+}
+
+.goodsbasketfont{
+	text-align: center;
+/*	position: absolute;
+	right: 30px;
+	top: 100px; */
+	float: right;
+	font: 18px/1.3em Arial, 'Istok Web', sans-serif;
+	color: #000;
+	list-style: none;
+	/*outline: 1px solid #0f0;*/
+}
+
+.goodsbasketfont    th { 
+    text-align: center; /* ¬ыравнивание по левому краю */
+    background: #ccc; /* ÷вет фона ¤чеек */
+    padding: 5px; /* ѕол¤ вокруг содержимого ¤чеек */
+    border: 0px solid black; /* √раница вокруг ¤чеек */
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+   }
+.goodsbasketfont    td { 
+    padding: 5px; /* ѕол¤ вокруг содержимого ¤чеек */
+    border: 1px solid black; /* √раница вокруг ¤чеек */
+	border-bottom: 0px;
+	border-left: 0px;
+	border-right: 0px;
+   }
+   
+.goodsbasketclearone:hover{
+	cursor: pointer;
+}
+
+.goodsbasketclear:hover{
+	cursor: pointer;
+	/*background-color:#0f0;*/
+	color: #000;
+	text-decoration: underline;
+}
+
+.goodsbasketinp:hover, .buylab:hover{
+	cursor: pointer;
+}
+
+.jcarousel-slider2{
+	position:relative;
+	text-align: center;
+	width: 1000px;
+	margin-top: 10px;
+	margin-left:auto; margin-right:auto;
+}
+
+.jcarousel-list2d{
+		
+}/*wwidth: 3348px; position: relative;*/
+
+.jcarousel-list2{
+	position: absolute;
+	overflow: hidden;
+	width: 840px;	
+	top: 0px;
+	left: 80px;
+	right: 80px;
+	
+}/*wwidth: 3348px; position: relative;*/
+
+.jcarousel-slider2 ul li{
+	position: relative;
+	display: inline-block;
+	width: 65px;
+	height: 78px;
+	text-align: center;
+	margin-top: 7px;
+	margin-left: 20px;
+	margin-right: 20px;
+	/*background-color:#ccc;
+	outline: 1px solid #666;*/
+}
+
+.jcarousel-slider2 ul li img {
+	display: block;
+	position: relative;
+	text-align: center;
+	width: 65px;
+	height: 65px;
+	margin-bottom: 2em;
+	margin-left:auto; margin-right:auto;
+}
+
+.jcarousel-slider2 .left{
+	position: absolute; 
+	width: auto;
+	left: 20px;
+	top: 7px;
+		/*линейность*/	
+}
+
+.jcarousel-slider2 .right{	
+	position: absolute;	
+	width: auto;
+	right: 20px;
+	top: 7px	
+}
+
+.jcarousel-slider2 .pause:hover{
+	cursor:pointer
+}
+
+.jcarousel-slider2 .left_pause{ 
+	position: absolute;
+	width: auto;
+	left: -20px;
+	top: 15px;
+	opacity: 0.5;
+	display: none;
+	
+}
+
+.jcarousel-slider2 .right_pause{
+	position: absolute;
+	width: auto;
+	right: -20px;
+	top: 15px;
+	opacity: 0.5;
+	display: none;
+}
+
+.jcarousel-slider2 > div > img{
+	width: 56px;
+	height: 56px;
+	-webkit-transition: transform 0.5s ease-out 0s alternate infinite;
+     -moz-transition: transform 0.5s ease-out 0s;
+     -o-transition: transform 0.5s ease-out 0s;
+}
+
+.jcarousel-slider2 .left_pause > img, .jcarousel-slider2 .right_pause > img{
+	width: 40px;
+	height: 40px;
+	-webkit-animation-name: flash_pause;
+    -moz-animation-name: flash_pause;
+    -o-animation-name: flash_pause;
+    animation-name: flash_pause;
+    /* Задержка перед началом */
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    /* Продолжительность анимации */
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+	/*повторение анимации*/
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-o-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	/*линейность*/
+	-webkit-animation-timing-function: ease-inout;
+	-moz-animation-timing-function: ease-inout;
+	-o-animation-timing-function: ease-inout;
+	animation-timing-function: ease-inout;
+	/*обратное воспроизв*/
+	-webkit-animation-direction: alternate;
+	-moz-animation-direction: alternate;
+	-o-animation-direction: alternate;
+	animation-direction: alternate;
+}
+
+.jcarousel-slider2 img:hover {
+
+	cursor:pointer
+}
+
+.jcarousel-slider2 .left >  img:hover, .jcarousel-slider2 .right >  img:hover  {
+    -webkit-animation-name: flash;
+    -moz-animation-name: flash;
+    -o-animation-name: flash;
+    animation-name: flash;
+    /* Задержка перед началом */
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    -o-animation-delay: 0s;
+    animation-delay: 0s;
+    /* Продолжительность анимации */
+    -webkit-animation-duration: 0.5s;
+    -moz-animation-duration: 0.5s;
+    -o-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+	/*повторение анимации*/
+	-webkit-animation-iteration-count: infinite;
+	-moz-animation-iteration-count: infinite;
+	-o-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	/*линейность*/
+	-webkit-animation-timing-function: ease-inout;
+	-moz-animation-timing-function: ease-inout;
+	-o-animation-timing-function: ease-inout;
+	animation-timing-function: ease-inout;
+	/*обратное воспроизв*/
+	-webkit-animation-direction: alternate;
+	-moz-animation-direction: alternate;
+	-o-animation-direction: alternate;
+	animation-direction: alternate;
+}
+
+.ibutton-css-green,.ibutton-css-blue{border-radius:5px;color:#fff;display:block;font-weight:bold;font-size:1.5em;line-height:1.6em;margin:0;padding:.1em .5em;position:relative;white-space:nowrap;text-shadow:1px 1px 0 rgba(0,0,0,0.4);box-shadow:2px 2px 4px 0 rgba(163,184,165,.7)}
+.ibutton-css-green,.ibutton-css-link-green{border-top:1px solid #6ec97a;border-left:1px solid #6ec97a;border-bottom:1px solid #d6e3d1;border-right:1px solid #d6e3d1;
+	background:#008600;
+	background:-moz-linear-gradient(top,#85d390 0%,#009700 50%,#007800 51%,#219b0c 75%,#31a517 100%);
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#85d390),color-stop(50%,#009700),color-stop(51%,#007800),color-stop(75%,#219b0c),color-stop(100%,#31a517));
+	background:-webkit-linear-gradient(top,#85d390 0%,#009700 50%,#007800 51%,#219b0c 75%,#31a517 100%);
+	background:-o-linear-gradient(top,#85d390 0%,#009700 50%,#007800 51%,#219b0c 75%,#31a517 100%);
+	background:-ms-linear-gradient(top,#85d390 0%,#009700 50%,#007800 51%,#219b0c 75%,#31a517 100%);
+	background:linear-gradient(top,#85d390 0%,#009700 50%,#007800 51%,#219b0c 75%,#31a517 100%)}
+.ibutton-css-green:hover,.ibutton-css-link-green:hover{background:#00ba00;
+	background:-moz-linear-gradient(top,#a7e2b0 0%,#00ba00 50%,#008600 51%,#3cdf19 85%,#46e522 100%);
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#a7e2b0),color-stop(50%,#00ba00),color-stop(51%,#008600),color-stop(85%,#3cdf19),color-stop(100%,#46e522));
+	background:-webkit-linear-gradient(top,#a7e2b0 0%,#00ba00 50%,#008600 51%,#3cdf19 85%,#46e522 100%);
+	background:-o-linear-gradient(top,#a7e2b0 0%,#00ba00 50%,#008600 51%,#3cdf19 85%,#46e522 100%);
+	background:-ms-linear-gradient(top,#a7e2b0 0%,#00ba00 50%,#008600 51%,#3cdf19 85%,#46e522 100%);
+	background:linear-gradient(top,#a7e2b0 0%,#00ba00 50%,#008600 51%,#3cdf19 85%,#46e522 100%)}
+.g-buy .ibutton-css-green{line-height:1em;height:auto;padding:.25em .5em}
+
+.ibutton-css-blue,.ibutton-css-link-blue{border-top:1px solid #6e8fc9;border-left:1px solid #6e8fc9;border-bottom:1px solid #d1dfe3;border-right:1px solid #d1dfe3;
+	background:#003c78;
+	background:-moz-linear-gradient(top,#85a1d3 0%,#004b97 50%,#003c78 51%,#0c689b 75%,#1778a5 100%);
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#85a1d3),color-stop(50%,#004b97),color-stop(51%,#003c78),color-stop(75%,#0c689b),color-stop(100%,#1778a5));
+	background:-webkit-linear-gradient(top,#85a1d3 0%,#004b97 50%,#003c78 51%,#0c689b 75%,#1778a5 100%);
+	background:-o-linear-gradient(top,#85a1d3 0%,#004b97 50%,#003c78 51%,#0c689b 75%,#1778a5 100%);
+	background:-ms-linear-gradient(top,#85a1d3 0%,#004b97 50%,#003c78 51%,#0c689b 75%,#1778a5 100%);
+	background:linear-gradient(top,#85a1d3 0%,#004b97 50%,#003c78 51%,#0c689b 75%,#1778a5 100%)}
+.ibutton-css-blue:hover,.ibutton-css-link-blue:hover{background:#005cba;
+	background:-moz-linear-gradient(top,#a7bbe2 0%,#005cba 50%,#004286 51%,#199edf 85%,#22a7e5 100%);
+	background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,#a7bbe2),color-stop(50%,#005cba),color-stop(51%,#004286),color-stop(85%,#199edf),color-stop(100%,#22a7e5));
+	background:-webkit-linear-gradient(top,#a7bbe2 0%,#005cba 50%,#004286 51%,#199edf 85%,#22a7e5 100%);
+	background:-o-linear-gradient(top,#a7bbe2 0%,#005cba 50%,#004286 51%,#199edf 85%,#22a7e5 100%);
+	background:-ms-linear-gradient(top,#a7bbe2 0%,#005cba 50%,#004286 51%,#199edf 85%,#22a7e5 100%);
+	background:linear-gradient(top,#a7bbe2 0%,#005cba 50%,#004286 51%,#199edf 85%,#22a7e5 100%)} 
+	
+.m-cart-full{
+	font-size:1.15em;
+	background:#329b1d;background-clip:padding-box;border-radius:0 0 10px 10px;padding-left:16px;width:17.231em;height:4.308em;z-index:40}
+
+.test{
+	font-size:20em;
+	font-style: italic;
+	font-family: fantasy;
+	color: #FFF;
+	position: fixed;
+	/*left: 20%;*/
+	/*right: 50%;*/
+	top: 24%;
+	/*bottom: auto;*/
+	width: 99%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	opacity: 0.3;
+	z-index: -999;
+}
+
+.ss{
+	overflow: auto; /* Отменяем схлопывающиеся отступы */
+	padding-bottom: 10px;
+}
+
+.subscriptiontxt{
+	text-align: center;
+	font: 15px/1.3em Arial, 'Istok Web', sans-serif;
+	color: #ccc;
+}
+
+.vk{
+	float: right;
+	border: 2px solid transparent;
+}
+
+.fb{
+	float: right;
+	border: 2px solid transparent;
+}
+
+.tw{
+	float: right;
+	border: 2px solid transparent;
+}
+
+.subscription{
+	float: right;
+	border-top: 4px solid transparent;
+}
+
+.sharetxt{
+	font: 15px/1.3em Arial, 'Istok Web', sans-serif;
+	color: #ccc;
+}
+
+.share, .g-plus{
+	float: left;
+	border: 4px solid transparent;
+}
+
+#_vk_groups, #_ok_group_widget, ._fb-follow, ._g-plus{
+	float: left;
+	border: 4px solid transparent;
+}
+
+.share > a > img, .subscription > a > img {
+	height:22px;
+	width:22px;
+}
+
+.widgets{
+	float: right;
+	list-style: none;
+}
+
+.widgetsdiv{
+	text-align: center;
+	margin-top: 100px;
+}
+
+.widgetssub{
+	list-style: none;
+}
+
+#vk_groups{
+	display: inline-block;
+}
+
+footer{
+	font-size: 14pt;
+	clear: right;
+	//float: right;
+	width: auto;
+	text-align: center;
+}
+
+footer>div{
+	
+}

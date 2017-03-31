@@ -1,0 +1,304 @@
+@charset "utf-8";
+
+@media all and (max-width: 1050px){
+	.info{
+		clear: left;
+	}
+}
+
+body {
+	FONT-FAMILY: Tahoma, "Droid Sans", Arial, sans-serif; FONT-SIZE: 15px; 
+}
+
+.mycont{
+	min-width: 760px;
+}
+
+.record{
+	display: block;
+	width: auto;
+	margin-left:auto; margin-right:auto;
+	padding: 10px; /* Поля вокруг текста */
+	padding-bottom: 10px;
+	outline: 1px solid #000;
+	margin-bottom: 10px;
+position: relative;
+background: #eee;/*#fafafa;*/	
+}
+
+.recdstop, .recmob{
+	display: block;
+	float: left;
+	width: 300px;
+	height: auto;
+	padding: 0px; /* Поля вокруг текста */
+	outline: 1px solid #000;
+	margin-top: 15px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 5px;
+}
+
+.recdstoptx{
+	clear: float;
+	text-align: center;
+}
+
+.bigimage{
+
+	float: left; 
+	width: 220px;
+	height: 250px;
+	text-align: center;
+}
+
+.smallimage {
+ 
+	float: left; 
+	width: 65px;
+	height: 250px;	
+}
+
+.smallimagelabel{
+	position: relative;
+	top: 100px;
+	width: 65px;
+	height: 65px;
+	text-align: center;
+}
+
+.record  .bigimage > img{
+	display: block;
+	width: 220px;
+	height: 220px;
+}
+
+.record  .smallimage  img{
+	
+	position: relative;
+	width: 65px;
+	height: 65px;
+	
+}
+
+.bigimage:hover, .smallimagelabel:hover, .bigimagem:hover, .smallimagelabelm:hover{
+	cursor: pointer;
+	
+}
+
+.recmob{
+	
+	width: 335px;
+	
+}
+
+.bigimagem{
+	position: relative;
+	top: 35px;
+	float: left; 
+	width: 220px;
+	height: 250px;
+	text-align: center;
+}
+
+.record  .bigimagem > img{
+	display: block;
+	width: 180px;
+	height: 180px;
+}
+
+.smallimagem {
+ 
+	float: left; 
+	width: 100px;
+	height: 250px;	
+}
+
+.smallimagelabelm{
+	position: relative;
+	top: 80px;
+	width: 100px;
+	height: 100px;
+	text-align: center;
+}
+
+.record  .smallimagem  img{
+	
+	position: relative;
+	width: 100px;
+	height: 100px;
+	
+}
+
+.inputexch{
+	display: none;
+}
+
+#info_{
+	
+	height: 250px;
+	
+}
+
+.info{
+	width:;		
+	height: ;/*250px;*/
+	padding-left: 10px;
+}
+
+.rows1{
+	width: auto;
+
+	left: 0px;
+	margin-top: 2pt;
+	font: italic 15px/1.3em Arial, 'Istok Web', sans-serif;
+}
+
+.rows2{
+	width: auto;
+
+	left: 0px;
+	margin-top: 1pt;
+	font: italic 15px/1.3em Arial, 'Istok Web', sans-serif;
+}
+
+.rows3{
+	width: auto;
+	
+	left: 0px;
+	margin-top: 0px;
+	font: italic 15px/1.3em Arial, 'Istok Web', sans-serif;
+}
+
+.delete{
+	position: relative;
+	clear: left;
+	top: 10px;
+	left: 5px;
+}
+
+._delete:hover{
+	cursor: pointer;
+}
+
+.delinp{
+	position: absolute;
+	top: 5px;
+	left: 5px;
+}
+
+.apply{
+	margin-left:0px;
+}
+
+.apply:hover{
+	cursor: pointer;
+}
+
+.allapply{
+	position: relative;
+	left: 25%;
+}
+
+input, textarea, button{
+	FONT-FAMILY: Tahoma, "Droid Sans", Arial, sans-serif; FONT-SIZE: 15px; 
+}
+
+.headercarousel, .headerrecord{
+	width: auto;
+	text-align: center;
+	font: italic bold 20px/1.3em Arial, 'Istok Web', sans-serif;
+}
+
+.carouselstatic{
+	
+	width: auto;
+	height: 1140px;
+	outline: 1px solid #000;
+}
+
+.recordcarousel{
+	position: relative;
+	top: 20px;
+	float: left;
+	width: 240px;
+	height: 280px;
+	text-align:center;
+}
+
+.imagescarousel{
+	width:220px;	
+}
+
+.imagescarousel > img{
+	width: 220px;
+	height: 220px;
+}
+
+.infotable{
+	position:relative;
+	left:20px;
+}
+
+.submitcarousel{
+	position: relative;
+	top: 240px;
+}
+
+.geninf{
+	padding: 10px;
+	outline: 1px solid #000;
+}
+
+.prsite{
+	padding: 10px;
+}
+
+.exchrtus, .factor{
+	display: inline-block;
+}
+
+.factor{
+	margin-left: 20px;
+}
+
+.exchrtus input[type="number"], .factor input[type="number"]{
+	width: 60px;
+}
+
+.space{
+	width: auto;
+}
+
+.newform{
+	margin-bottom: 50px;
+}
+
+.administrator, .adminpassword{
+	font: italic bold 20px/1.3em Arial, 'Istok Web', sans-serif;
+}
+
+.formtelemail{
+	float: left
+}
+
+.adminpassword{
+}
+
+.stbeback{
+	position: relative;
+	left: 10px;
+	top: 5px;
+}
+
+a:hover{
+	color: red;
+}
+
+.adduser{
+	display: block;
+}
+
+.adduser:hover{
+	display: block;
+}

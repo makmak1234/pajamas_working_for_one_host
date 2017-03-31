@@ -1,0 +1,122 @@
+@charset "utf-8";
+*{
+	/*font: 1.1em Arial, 'Istok Web', sans-serif;*/
+	color: #000;
+	text-align: center;
+	background: #CCCC66;
+}
+
+body{
+	text-align: center;
+}
+
+.youitems{
+	font:  bold italic 1.3em Arial, 'Istok Web', sans-serif;
+	color: #FFF;
+}
+
+.backtoshopping{
+	font:  bold italic 1.3em Arial, 'Istok Web', sans-serif;
+	color: #006600;
+}
+
+.backtoshopping:hover{
+	cursor: pointer;
+	color: #00CC66;
+}
+
+a:hover{
+ color: #00CC66;
+}
+
+input:hover{
+	cursor: pointer;
+}
+
+#iddivbasketbig{
+	max-width:1000px;
+	min-width:200px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.basketbig {
+	table-layout:auto;
+	word-wrap: break-word; /* Перенос слов */
+	font-size: 1.1em;
+	margin-left: auto;
+	margin-right: auto;
+    width: 100%; /* Ўирина таблицы */
+    border: 4px double black; /* –амка вокруг таблицы */
+    border-collapse: collapse; /* ќтображать только одинарные линии */
+   }
+.basketbig    th { 
+    text-align: center; /* ¬ыравнивание по левому краю */
+    background: #ccc; /* ÷вет фона ¤чеек */
+    padding: 5px; /* ѕол¤ вокруг содержимого ¤чеек */
+    border: 1px solid black; /* √раница вокруг ¤чеек */
+   }
+.basketbig    td { 
+    padding: 5px; /* ѕол¤ вокруг содержимого ¤чеек */
+    border: 1px solid black; /* √раница вокруг ¤чеек */
+   }
+   
+.goodsimg img{
+	width: 65px;
+	height: 65px;
+}
+   
+.telques{
+	color: red;
+	font:  bold italic 1.3em Arial, 'Istok Web', sans-serif;
+}   
+   
+.personaldata{
+	font-size:1.1em;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+     /* Ўирина таблицы */
+	width: 100%;
+}
+
+
+.youitemsform{
+	
+	max-width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	background:#ccc;
+}
+
+.personaldata input{
+	font-size: 1.1em;
+	text-align:left;
+	width: 100%;
+	
+}
+
+input[type="submit"]{
+	max-width:300px;
+	text-align:center;
+}
+   
+.priceall{
+	font: 1.3em Arial, 'Istok Web', sans-serif;
+	color: #F00;
+}
+
+.goodsbasketclearone:hover{
+	cursor: pointer;
+}
+.test{
+	font-size:10em;
+	color: #FFF;
+	position: fixed;
+	left: 5%;
+	/*right: 50%;*/
+	top: 30%;
+	/*bottom: auto;*/
+	text-align: center;
+	opacity: 0.3;
+}
