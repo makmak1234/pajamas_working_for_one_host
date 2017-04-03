@@ -1,11 +1,17 @@
-﻿//ajax для маленькой корзины
+﻿function movbigcart(dirbasbi){
+	//document.getElementById("idtest").innerHTML = "this.responseText";
+	var query = dirbasbi;
+	window.location.href= query;
+}
+
+//ajax для маленькой корзины
 function goodsbasketcheck(row, clearone, plus)
 {
 //	document.getElementById('basketsmall').innerHTML = plus;
 //nocache = "&nocache=" + Math.random() * 1000000;
 //clearone1 = "&clearone=" + clearone;
 //document.getElementById('querymy').innerHTML = row;
-var query = plus + "basketsmallm.php?mclon=" + clearone + "&id=" + row + "&nocache=" + Math.random() * 1000000;
+var query = plus + "./m/basketsmallm.php?mclon=" + clearone + "&id=" + row + "&nocache=" + Math.random() * 1000000;
 
 request = new ajaxRequest;
 

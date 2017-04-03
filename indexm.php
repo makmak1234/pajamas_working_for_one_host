@@ -15,7 +15,7 @@ session_start();
 header("Cache-Control: no-cache, must-revalidate"); // HTTP/1.1
 header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); // Дата в прошлом
 
-require_once "../login.php";
+require_once "login.php";; //" ../login.php";
 
 //session_set_cookie_params('','/','m.'.$dircook, false, false);//'m.pajamas.esy.es'
 
@@ -71,8 +71,9 @@ END;
 
 <link href="./elements/1419281141_363179.ico" rel="shortcut icon" type="image/x-icon" />
 <title>Пижамки</title>
-<link href="mpajamas.css" type="text/css" rel="stylesheet">
-<script language="javascript" type="text/javascript"  src="./jsm/goodsbasketcheckm.js">
+<link href="./m/mpajamas.css" type="text/css" rel="stylesheet">
+
+<script language="javascript" type="text/javascript"  src="./m/jsm/goodsbasketcheckm.js">
 </script>
 <script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
 
@@ -160,7 +161,7 @@ echo <<<END
 		<li onmouseover="myover()" onmouseout="myout()"><button class="menu" id="menu">Меню</button>
 			<ul>
 				<li><a href='$dirpajsm'><button class="menu">Главная</button></a></li>
-				<li><a href="http://127.0.0.1/Pajamas/m/"><button class="menu">Контакты</button></a></li>
+				<li><a href="$dirpajsm"><button class="menu">Контакты</button></a></li>
 				<li><a href="$subscribe"><button class="menu">Социальные сети</button></a></li>
 				<li><a href="$salprice"><button class="menu">Оптовые цены</button></a></li>
 				<li><a href="$retprice"><button class="menu">Розничные цены</button></a></li>
@@ -196,7 +197,7 @@ END;
 					$idarr = $_SESSION["idbasketsmall"];
 					$nid = $_SESSION["nid"];
 					if($idarr){
-						require_once "./bassmallunatedm.php";
+						require_once "./m/bassmallunatedm.php";
 					}
 					//else array_splice($idarr, 0, 1);
 				}
@@ -362,15 +363,15 @@ END;
 if(isset($salret) || isset($_GET["retprice"])){
 	//$index =  $foo_mysgli->sanitizeString($_GET["index"]);
 	if(isset($_GET["retprice"])){
-		setcookie("valcook", "0", 0, "", ".".$dircook, false, true);//.pajamas.esy.es
+		$_SESSION["valcook"] = 0; //setcookie("valcook", "0", 0, "", ".".$dircook, false, true);//.pajamas.esy.es
 		$finpgdsname = "inputgoodsid";
 	}
 	else if(isset($salret)){
-		setcookie("valcook", "1", 0, "", ".".$dircook, false, true);//.pajamas.esy.es
+		$_SESSION["valcook"] = 1; //setcookie("valcook", "1", 0, "", ".".$dircook, false, true);//.pajamas.esy.es
 	}
 
 	$valcook = "none";
-	if(isset($_COOKIE["valcook"]))$valcook = $_COOKIE["valcook"];
+	if(isset($_SESSION["valcook"]))$valcook = $_SESSION["valcook"]; //(isset($_COOKIE["valcook"]))$valcook = $_COOKIE["valcook"];
 	echo <<<END
 	<form name="$finpgdsname" action="$dirpajsm" method="POST">
 		<input type="hidden" name="$nameinp" value="$inputgoodsid" />
@@ -460,7 +461,7 @@ if(!isset($_POST["inputgoodsid"]))
 
 	<form name='choicegoods' action='$dirpajsm' method='POST'>
 		<input type='hidden' name='inputgoodsid' value='' />
-		<input type='hidden' name='PHPSESSID' value='$phpsessid'>
+		<input type='hidden' name='PHPSESSID' value='$phpsessid' />
 	</form>	
 END;
 
@@ -473,7 +474,7 @@ END;
 	for($i = 1; $i <= $rows; $i++) //$rows
 	{
 		$row =  $foo_mysgli->mysql_fetch_row($result);//текущая строка таблицы
-		$images = "./gallery/thum100_" . $row[4];//путь к маленькому изображению товара
+		$images = "./m/gallery/thum100_" . $row[4];//путь к маленькому изображению товара
 			echo <<<END
 		<div class="content">
 				<figure class='imgrecord'><img class='myimages' src='$images' 		onclick="document.choicegoods.inputgoodsid.value='$row[3]'; document.choicegoods.submit();" alt=''>
@@ -505,7 +506,7 @@ else{
 	$result = $foo_mysgli->mysql_query($query);
 	$row = $foo_mysgli->mysql_fetch_row ( $result);
 	if ( !$result) die ("Сбой при доступе к базе данных вывод одного товара: " . $foo_mysgli->mysql_error());
-	$myfile_name = "./gallery/thum300_" . $row[4];
+	$myfile_name = "./m/gallery/thum300_" . $row[4];
 	//отображаемый файл
 	//$directory = ROOT_LOCATION . "basketbig.php";
 	$dirbuy = $dirbasbi . "?buyid=" . $row[3];
@@ -568,7 +569,7 @@ END;
 							{
 								$row =  $foo_mysgli->mysql_fetch_row($result);//текущая строка таблицы
 					
-								$images = "./gallery/thum_" . $row[4];//путь к большому изображению товара
+								$images = "./m/gallery/thum_" . $row[4];//путь к большому изображению товара
 								echo <<<END
 								<li><img src="$images" onclick="document.choicegoods2.inputgoodsid.value='$row[3]'; document.choicegoods2.submit();" alt=""></li>
 END;
@@ -725,5 +726,6 @@ $page = join('',file($f));
 ?>
 
 </div>
+
 </body>
 </html>

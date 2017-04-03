@@ -14,7 +14,7 @@
 	
 	define("COOK_LOCATION", "pajamas_one.home");//http://pajamas.home/
 	define("ROOT_LOCATION", "http://pajamas_one.home/");// http://pajamas.esy.es/
-	define("M_LOCATION", "http://pajamas_one.home/m");//http://m.pajamas.esy.es
+	define("M_LOCATION", "http://pajamas_one.home/indexm.php");//http://m.pajamas.esy.es  http://pajamas_one.home/m
 	$dirgaupl = ROOT_LOCATION . "gallery_upload.php";
 	$dirbycus = ROOT_LOCATION . "buying_customers.php";
 	$dirpajs = ROOT_LOCATION . "";//"pajamas.php";
@@ -24,7 +24,8 @@
 	$dirbsbigcl = ROOT_LOCATION . "basketbigclear.php";
 	//$directory = "http://127.0.0.1/Pajamas/";
 	$dircook = COOK_LOCATION;
-	$dirpajsm = M_LOCATION;// "m/";//"pajamas.php";
+	$dirpajsm = M_LOCATION; //"";
+	$dirpajs_m = M_LOCATION;// "m/";//"pajamas.php";
 	
 	$exchrt = 2.5; //руб/грн
 	$factor = 1.2; //розница/опт
@@ -62,10 +63,11 @@
 		public $dirthan;
 		public $dirthan2;
 		public $dirpajsm;
+		public $dirpajs_m;
 		public $dircook;
 		public $dirbsbigcl;
 
-		const M_LOCATION = "http://pajamas_one.home/m";//"http://m.pajamas.esy.es";
+		const M_LOCATION = "http://pajamas_one.home/indexm.php";//"http://m.pajamas.esy.es";
 		const ROOT_LOCATION = "http://pajamas_one.home/";//"http://pajamas.esy.es/";
 		const COOK_LOCATION = "http://pajamas_one.home/";//"pajamas.esy.es";
 		public $foo_mysgli;
@@ -81,7 +83,8 @@
 			$this->dirbsbigcl = self::ROOT_LOCATION . "basketbigclear.php";
 			//$directory = "http://127.0.0.1/Pajamas/";
 			$this->dircook = self::COOK_LOCATION;
-			$this->dirpajsm = self::M_LOCATION; //. "m/";//"pajamas.php";
+			$this->dirpajsm = self::M_LOCATION; // ""; 
+			$this->dirpajs_m = self::M_LOCATION; //. "m/";//"pajamas.php";
 			
 			$foo_mysgli = new foo_mysgli($this->db_hostname, $this->db_username, $this->db_password, $this->db_database);
 			$this->foo_mysgli = $foo_mysgli;
@@ -109,8 +112,8 @@
 			//выбор отображаемой валюты-------------------------------------------------------
 			// столбец в базе: 2-опт грн 7-опт руб 8-розн грн 9-розн руб
 			$this->val = $row[4];
-			if(isset($_COOKIE["valcook"])){
-				if($_COOKIE["valcook"] == '1'){
+			if(isset($_SESSION["valcook"])){
+				if($_SESSION["valcook"] == '1'){
 					if($this->val == 8) $this->val = 2;
 					if($this->val == 9) $this->val = 7;
 				}
@@ -161,8 +164,8 @@
 //выбор отображаемой валюты-------------------------------------------------------
 // столбец в базе: 2-опт грн 7-опт руб 8-розн грн 9-розн руб
 		$val = $row[4];
-		if(isset($_COOKIE["valcook"])){
-				if($_COOKIE["valcook"] == '1'){
+		if(isset($_SESSION["valcook"])){
+				if($_SESSION["valcook"] == '1'){
 					if($val == 8) $val = 2;
 					if($val == 9) $val = 7;
 				}

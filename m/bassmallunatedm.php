@@ -12,7 +12,7 @@ foreach($idarr as $k=>$v){
 $dirbasbi1 = $dirbasbi . "?" .session_name().'='.session_id();
 echo <<<END
 				<div class="goodsbasketfont">
-					<img src="./elements/delete_16x16.png" class="goodsbasketclear" onclick="goodsbasketcheck('-1', 'FALSE', './')" title="Очистить корзину">
+					<img src="./m/elements/delete_16x16.png" class="goodsbasketclear" onclick="goodsbasketcheck('-1', 'FALSE', './')" title="Очистить корзину">
 					<table class="m-cart-full" title="Оформить" onclick="movbigcart('$dirbasbi1')">
 						<tr>
 							<td>В корзине: $n товар<td>
@@ -22,12 +22,5 @@ END;
 						<tr><td>К оплате: $priceall $prsite</td></tr>
 					</table>
 				</div>
-				<script>
-					function movbigcart(dirbasbi){
-						//document.getElementById("idtest").innerHTML = "this.responseText";
-						var query = dirbasbi;
-						window.location.href= query;
-					}
-				</script>
 END;
 ?>

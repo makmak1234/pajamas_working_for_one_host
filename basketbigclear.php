@@ -48,10 +48,12 @@ if(isset($_GET["exchrtv"]) && isset($_GET["elem"])){
 	if(isset($_GET["index"])){
 		$index =  $foo_mysgli->sanitizeString($_GET["index"]);
 		if($index == "ret"){
-			setcookie("valcook", "0", 0, "", ".".$dircook, false, true);//.pajamas.esy.es
+			//setcookie("valcook", "0", 0, "", ".".$dircook, false, true);//.pajamas.esy.es
+			$_SESSION["valcook"] = 0;
 		}
 		else if($index == "sal"){
-			setcookie("valcook", "1", 0, "", ".".$dircook, false, true);//.pajamas.esy.es
+			//setcookie("valcook", "1", 0, "", ".".$dircook, false, true);//.pajamas.esy.es
+			$_SESSION["valcook"] = 1;
 		}
 		$nameinp = "none";
 		$inputgoodsid="";
@@ -64,9 +66,12 @@ if(isset($_GET["exchrtv"]) && isset($_GET["elem"])){
 		//if($mobcook == "0") $mydir = $dirpajs;
 		$mydir = $dirpajs;
 	$valcook = "none";
-	if(isset($_COOKIE["valcook"]))$valcook = $_COOKIE["valcook"];
+	if(isset($_SESSION["valcook"]))$valcook = $_SESSION["valcook"];//(isset($_COOKIE["valcook"]))$valcook = $_COOKIE["valcook"];
+
+	if($valcook == 1) echo "Оптовые цены";
+	if($valcook == 0) echo "Розничные цены"; 
 		echo <<<END
-	valcook = $valcook
+	<!--valcook = $valcook-->
 		<form name="inputgoodsid" action="$mydir" method="POST">
 			<input type="hidden" name="$nameinp" value="$inputgoodsid" />
 	<!--<input type="submit" value="Посмотрел">-->

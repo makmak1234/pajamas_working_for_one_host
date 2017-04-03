@@ -6,7 +6,7 @@
 session_start();
 
 require_once 'login.php';//02.11.15
-session_set_cookie_params('','/','m.'.$dircook);//m.pajamas.esy.es
+//session_set_cookie_params('','/','m.'.$dircook);//m.pajamas.esy.es
 
 //require_once 'login.php';//02.11.15
 

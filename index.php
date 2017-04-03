@@ -8,6 +8,7 @@
 		session_id($_POST['PHPSESSID']);
 		$mysesid = $_POST['PHPSESSID'];
 	}
+	
 	//session_set_cookie_params('','/',"$dirpajsm", false, false);//'m.pajamas.esy.es'
 	session_start();
 	
@@ -48,7 +49,7 @@
 			$inputgoodsid = "inputgoodsf";
 		}
 		echo <<<END
-		<form name="mypostid" action="$dirpajsm" method="POST">
+		<form name="mypostid" action="$dirpajs_m" method="POST">
 			<input type="hidden" name="PHPSESSID" value="$mysesid" />
 			<input type="hidden" name="$inputgoodsid" value="$idpost" />
 		</form>
@@ -66,7 +67,7 @@ END;
 	}
 //$ua['system'] = true;
 	if($ua['system']){
-		header ("Location: $dirpajsm?" .session_name().'='.session_id());
+		header ("Location: $dirpajs_m?" .session_name().'='.session_id());
 	}
 ?>
 <!DOCTYPE html>
@@ -83,7 +84,6 @@ END;
 <meta name="title" content="Пижамки" />
 <meta name="description" content="Магазин детских пижамок." />
 <link rel="image_src" href="./m/elements/1419281141_363179.ico" />
-<script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
 
 <meta name="robots" content="index, follow">
 <meta name="keywords" content="детская пижама отечественная одежда Пижамки Pajamas качественная ноская недорогая скидки натуральнный материал гипоаллергенная легко стирается">
@@ -92,15 +92,10 @@ END;
 <link href="./m/elements/1419281141_363179.ico" rel="shortcut icon" type="image/x-icon" />
 <title>Пижамки</title>
 <link href="Pajamas.css" type="text/css" rel="stylesheet">
+
 <script src="jquery/jquery.min.js" type="text/javascript"></script>
 <script language="javascript" type="text/javascript"  src="jquery/jquery.carouFredSel.packed.js"></script>
 
-<script language="javascript" type="text/javascript"  src="myscript/pause.js"></script>
-<script language="javascript" type="text/javascript"  src="myscript/click.js"></script>
-<script language="javascript" type="text/javascript"  src="myscript/goodsbasketcheck.js"></script>
-<script language="javascript" type="text/javascript"  src="myscript/authvkajx.js"></script>
-
-<script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>
 <!--<script src="https://apis.google.com/js/platform.js" async defer>
   {lang: 'ru'}
 </script>-->
@@ -285,9 +280,9 @@ END;
 				</ul>
 			</li>
 			<li id="buynow"><a href="">Фотогалерея</a></li>--!>
-			<li id="downloads"><a href="">Оптовым клиентам</a>
+			<li id="downloads"><a href="#">Оптовым клиентам</a>
 				<ul>
-					<li onclick='document.getElementById("formregis").style.display = "block";'><a href="#">Оптовая цена (регистрация)</a></li>
+					<li onclick='document.getElementById("formregis").style.display = "block";'><a href="#" >Оптовая цена (регистрация)</a></li>
 					<li><a href="$bsbigclret">Розничная цена</a></li>
 				</ul>
 			</li>
@@ -498,7 +493,7 @@ else{
 	$dirbuy = $dirbasbi . "?buyid=" . $row[3];
 
 $valcook = "none";
-if(isset($_COOKIE["valcook"]))	$valcook = $_COOKIE["valcook"];
+if(isset($_SESSION["valcook"]))	$valcook = $_SESSION["valcook"];
 	
 	echo <<<END
 		<div class="choicegoodscont">
@@ -984,6 +979,14 @@ function device($u_agent)
 	return TRUE;//Mobile
 }
 ?>
-	
+
+<script type="text/javascript" src="http://vk.com/js/api/share.js?90" charset="windows-1251"></script>
+
+<script language="javascript" type="text/javascript"  src="myscript/pause.js"></script>
+<script language="javascript" type="text/javascript"  src="myscript/click.js"></script>
+<script language="javascript" type="text/javascript"  src="myscript/goodsbasketcheck.js"></script>
+<script language="javascript" type="text/javascript"  src="myscript/authvkajx.js"></script>
+
+<script type="text/javascript" src="//vk.com/js/api/openapi.js?116"></script>	
 </body>
 </html>
