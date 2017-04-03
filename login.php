@@ -31,17 +31,11 @@
 	$factor = 1.2; //розница/опт
 	$exchrtus = 1; //использовать руб/грн = 1
 	$factorus = 1; //использовать розница/опт = 1
-	//$prsitem[0] = 1; //показывать в грн = 1
-	//$prsitem[1] = 0; //не показывать в руб = 0
 	$prsitem = 8; //показывать в грн опт = 2, руб опт = 7, грн розн = 8, руб розн = 9
 	$valuta = array ("грн опт", "руб опт", "грн розн", "руб розн");
 	
 	
 	class myconst{
-		//global $db_hostname;
-		//global $db_database;
-		//global $db_username;
-		//global $db_password;
 		
 		protected $db_hostname = 'pajamas_one.home';//'mysql.hostinger.com.ua';
 		protected $db_database = 'pajamas_one';//'u742892412_pajam';
@@ -129,18 +123,8 @@
 			$foo_mysgli->mysql_query ("SET NAMES utf8");
 		}
 	}
-	
-	//$query = "CREATE DATABASE  `Pajamas` DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci";
-	//$result = mysql_query($query);
-	//if(!$result) die ("Невозможно создать БД");
-	//SET PASSWORD FOR  'root'@'127.0.0.1' = PASSWORD(  '****' )
-	
-	//CREATE USER 'mak'@'localhost' IDENTIFIED BY  '***';
-
-	//GRANT ALL PRIVILEGES ON * . * TO  'mak'@'localhost' IDENTIFIED BY  '***' WITH GRANT OPTION MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0 ;
 
 	$foo_mysgli = new foo_mysgli($db_hostname, $db_username, $db_password, $db_database);
-	//$foo_mysgli->myconstruct($db_hostname, $db_username, $db_password, $db_database);
 	
 	//создать таблицу настроек контента сайта		
 		$query = "CREATE TABLE pajset (exchrt FLOAT(3,1) UNSIGNED,
@@ -175,33 +159,13 @@
 		if($val == 8) $prsite = $valuta[2];
 		if($val == 9) $prsite = $valuta[3];
 		
-//	$foo_mysgli->__construct($db_hostname, $db_username, $db_password, $db_database);
-//	$link = mysqli_connect($db_hostname, $db_username, $db_password, $db_database);
-//	$db_server = mysqli_connect($db_hostname, $db_username, $db_password);
-
-//	if ( !$link) die("Невозможно подключиться к MySQL: " . mysqli_error());
-
-//echo "dbserver =  $db_server" ;
-	//mysql_select_db($db_database, $db_server)
-//	$query = mysqli_select_db($mysqli, $db_database); 
-//		if(!$query) die("Невозможно выбрать базу данных: " . mysqli_error());
-		
-	//mysql_query("SET NAMES 'cp1251'");
-	//mysql_query("SET CHARACTER SET 'cp1251'");
-	//mysql_query("SET NAMES 'utf8'");
-//mysql_query("SET CHARACTER SET 'utf8'");
 $foo_mysgli->mysql_query ("set_client='utf8'");
 $foo_mysgli->mysql_query ("set character_set_results='utf8'");
 $foo_mysgli->mysql_query ("set collation_connection='utf8_general_ci'");
 $foo_mysgli->mysql_query ("SET NAMES utf8");
 
-//require_once 'sanitizeString.php';
-
 class foo_mysgli extends mysqli{
-	//private $db_hostname = 'localhost';
-	//private $db_database = 'pajamas';
-	//private $db_username = 'mak';
-	//private $db_password = '1234';
+	
 	function __construct($db_hostname, $db_username, $db_password, $db_database){
 		parent::__construct($db_hostname, $db_username, $db_password, $db_database);
 	}
@@ -223,9 +187,7 @@ class foo_mysgli extends mysqli{
 	function mysql_result($result, $n, $column){
 		$result->data_seek($n);
 		$row = $result->fetch_assoc();
-	//foreach($$row as $v => $k){
-		//print_r("$k= " . $v);
-	//}
+
 		return  $row[$column];// = $result->fetch_field();//$row[$column];
 	}
 	function sanitizeString($var)

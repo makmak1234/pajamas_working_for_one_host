@@ -168,8 +168,6 @@
 	
 function destroy_session_and_data()
 {
-		//$_GET = array();
-		//$_POST = array();
 		unset($_GET, $_POST);
 		$_SESSION = array();
 		if (session_id() != "" || isset($_COOKIE[session_name()])){

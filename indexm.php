@@ -46,17 +46,6 @@ END;
 	//header ("Location: $dirpajs?" .session_name().'='.session_id());
 }
 
-//if(isset($_GET["mobcook"])){
-//	setcookie("mobcook", "1");
-//}
-//$ua=getBrowser();
-//	if(isset($_COOKIE["mobcook"])){
-//		if($_COOKIE["mobcook"] == "1") $ua['system'] = true;
-//		print_r("ua= " . $ua['system']);
-//		print_r("mobcook= " . $_COOKIE["mobcook"]);
-//	}
-//ini_set('display_errors',1);
-//error_reporting(E_ALL);
 ?>
 <!-- saved from url=(0024)http://kidorable.com.ru/ -->
 <html>
@@ -101,44 +90,11 @@ END;
 				<a href="$dirpajs1">Полная версия</a>
 			</footer></br>
 END;
-			//print_r(" session_id()= " . session_id());
-			//if(isset($_COOKIE["mobcook"])) print_r(" mobcook= " . $_COOKIE["mobcook"]);
-			//if(!empty($this->idpost)) print_r(" idpost= " . $this->idpost);
-			//if(isset($_SESSION["sesgoodsid"])) print_r(" sesgoodsid= " . $_SESSION["sesgoodsid"]);
 		}
 	}
 ?>
 
 <?php
-
-// подключаем файл настроек
-//$inifopen = ini_set("allow_url_fopen", 1);
-//$iniinclude = ini_set("allow_url_include", 1);
-
-
-//$inifopen = 1;
-//echo "inifopen = $inifopen ";
-//echo "iniinclude = $iniinclude";
-
-//require_once "../login.php"; 
-
-// подключаемся к серверу БД
-//mysql_connect($dbhost,$dbuser,$dbpasswd);
-//mysql_select_db($dbname);
-//mysql_query('SET NAMES cp1251');
-
-	//require_once 'login.php';
-
-
-// подключаем шаблонизатор
-//require_once "mtemplate.php"; 
-
-// открываем шаблон
-//$tpl->get_tpl('mpajamas.tpl'); 
-
-//session_start();
-
-//require_once 'login.php';
 
 $priceall = 0;
 $subscribe = $dirpajsm . "?socnet=1";
@@ -305,10 +261,7 @@ if(isset($_POST["organiz"])){
 		$mypassa = explode(" ", $organiz);
 		$mypass = $mypassa[0];
 		$mypass = ltrim($mypass);
-		//print($mypass);	
-		//$mypass = strtolower($mypass);
-		//if(strlen($mypass) > 5) $mypass = substr($mypass, 0, 5);
-		//print($mypass);
+		
 		$mypass .= rand(10,99);
 		
 		//создаём таблицу регистрации оптовиков
@@ -536,15 +489,6 @@ else{
 			<!--<div id="basketsmall">-->
 END;
 
-			/*	if(isset($_SESSION["idbasketsmall"]))
-				{
-					$idarr = $_SESSION["idbasketsmall"];
-					$nid = $_SESSION["nid"];
-					if($idarr){
-						require_once "./bassmallunatedm.php";
-					}
-					//else array_splice($idarr, 0, 1);
-				} */
 	echo <<<END
 			<!--</div>-->
 		</div>
@@ -599,130 +543,6 @@ END;
 	//$myfooter->__construct($dirpajs, $idpostp);
 	$myfooter->foomyfooter();
 			  
-//	echo $goods;
-
-// устанавливаем переменные шаблона
-//$page = join('',file($f));
-//$goods = "Images";
-//$tpl->set_value('GOODS', $goods);
-
-//$tpl->set_value('TITLE',"title"); 
-//$tpl->set_value('DESCRIPTION',"description"); 
-//$tpl->set_value('INFO',"info"); 
-
-// меню пока не будет
-//include "menu.php";
-
-//$tpl->set_value('MENU',"menu"); 
-
-//$tpl->set_value('TEST',"Тест"); 
-
-// переменная $p не установлена - нужно вывести главную страницу
-/*  if (!isset($p)) {
-
-        $q = "select * from static where id=\"main\" limit 1";
-	$r = mysql_query($q);
-
-	$row = mysql_fetch_array($r);
-	$page = $row[content];
-
-}
-elseif($p=="show") {
-
-// выводим содержимое раздела
-	$id = @htmlspecialchars($id);
-	$id = @strip_tags($id);
-
-// ищем подразделы
-$query = "select * from cats where root=$id";
-$result = mysql_query($query);
-if (mysql_num_rows($result)==0) {
-// подразделов нет, выводим страницы
-	$q2 = "select * from cats where id=$id";
-	$res2 = mysql_query($q2);
-
-	$q3 = "select * from cats where id=$id";
-	$res3 = mysql_query($q3);
-
-        $row3 = mysql_fetch_array($res3);
-
-	$info = $row3[txt];
-
-	$page = $page . "<table width=100% border=0><td valign=top width=40%>";
-
-	if (mysql_num_rows($res2)>0) {
-
-		$row2 = mysql_fetch_array($res2);
-		$page = $page . "<h1>$row2[title]</h1><p>";		
-
-		$q = "select * from pages where cat=$id";
-		
-		$res = mysql_query($q);
-		
-		while ($row = mysql_fetch_array($res))  
-			$page = $page . "<br><b><a href=index.php?p=showpage&id=$row[id]>$row[header]</a></b>";
-		
-	    
-       $page = $page . "</td><td valign=top>$info</td></table>";
-
-	}
-	else $page = $page .  "<h1>Нет такого раздела!</h1>";
-}
-
-// есть подразделы, выводим их
-while ($row = mysql_fetch_array($result))  
-	$page = $page .  "<br><a href=index.php?p=show&id=$row[id]>$row[title]";
-
-}
-elseif ($p=="showpage") {
-
-	$id = @htmlspecialchars($id);
-	$id = @strip_tags($id);
-
-	$q = "select * from pages where id=$id";
-	$r = mysql_query($q);
-	
-	if (mysql_num_rows($r)>0) {
-		$row = mysql_fetch_array($r);
-		$page = $page .  "<h1>$row[header]</h1>";
-
-		$page = $page .  "<p><center><a name=top></a><a href=#down>Вниз</a></center><p>";
-
-		$page = $page .  "<p><br><br>$row[content]";
-		$page = $page .  "<p><p><a target=_blank href=print.php?id=$id>Версия для печати</a>";
-
-		$page = $page .  "<p><br><p><center><a name=down></a><a href=#top>Наверх</a></center>";
-		
-	}
-	else $page = $page .  "<h1>Нет такой страницы!</h1>";
-}
-elseif ($p=="static") {
-
-	$id = @htmlspecialchars($id);
-	$id = @strip_tags($id);
-
-	$q = "select * from static where id=\"$id\" limit 1";
-	$r = mysql_query($q);
-
-	$row = mysql_fetch_array($r);
-	$page = $row[content];
-
-}
-elseif($p=="file") {
-
-$f = $f . ".html";
-$page = join('',file($f));
-
-} */
-
-
-//$tpl->set_value('PAGE',"page"); 
-
-// запускаем парсинг шаблона
-//$tpl->tpl_parse(); 
-
-// выводим HTML
-//echo $tpl->html; 
 ?>
 
 </div>

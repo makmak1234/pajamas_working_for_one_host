@@ -32,9 +32,7 @@ END;
 										prretu VARCHAR(7),
 										prretr VARCHAR(7)) ENGINE MyISAM";
 		
-		//$query = "CREATE TABLE clients (orderclients MEDIUMINT AUTO_INCREMENT KEY, mycurdate MEDIUMINT) ENGINE MyISAM";
 		$result = $foo_mysgli->mysql_query($query);
-		//if(!$result)  die ("Сбой при создании pajamas1: " . mysql_error());
 
 
 //else echo "Таблица анна не создана";
@@ -273,10 +271,7 @@ if(isset($_FILES["myfile"]))
 		}
 	}
 	header ("Location: $dirgaupl");
-	//header("$dirgaupl");
- //unset($_FILES);
 }
-//unset($_FILES);
 
 //внесение одного title, price, description
 if(isset($_POST['title']) || isset($_POST['prretu']) || isset($_POST['description']))

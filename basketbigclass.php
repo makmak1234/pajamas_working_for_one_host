@@ -76,18 +76,12 @@ class basketbig{
 			//echo "Введите пожайлуста номер телефона для связи с вами";
 		}			
 
-/*if(isset($_GET["buyid"])){
-	$id = sanitizeMySQL($_GET["buyid"]);
-	//$_GET = array();
-}*/
+
 		if(isset($_SESSION["idbasketsmall"])){
 			$this->idarr = $_SESSION["idbasketsmall"];
 			$this->nid = $_SESSION["nid"];
 		}
-	/*else{
-		$idarr[] = $id;
-		$nid[] = 1;
-	}*/
+	
 	
 		if(isset($_POST["buyid"])){
 			$id = $foo_mysgli->sanitizeMySQL($_POST["buyid"]);

@@ -1,10 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0024)http://kidorable.com.ru/ -->
 <html><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"><!--charset=utf-8-->
-
-<!--<meta name="robots" content="index, follow">
-<meta name="keywords" content="1С-Битрикс, CMS, PHP, bitrix, система управления контентом">
-<meta name="description" content="Детская одежда Kidorable — это яркие, стильные и удивительно ноские вещи, которые обязательно понравятся маленьким модникам и модницам, а также их родителям!">-->
 
 <title>Покупки клиентов</title>
 <link href="buying_customers.css" type="text/css" rel="stylesheet">
@@ -77,9 +72,7 @@ END;
 			<td>
 				<table class = "goods">
 END;
-				//$query = "SELECT * FROM pajamas1";
-				//$result = mysql_query($query);
-				//$rows = mysql_fetch_row($result);
+
 				$priceall = 0; 
 				for($j = 0; $j < count($idarr); $j++){
 					$query = "SELECT * FROM pajamas1 WHERE id = '$idarr[$j]'";
@@ -105,9 +98,7 @@ END;
 			<td>
 				<table class="goods2">
 END;
-				//$query = "SELECT * FROM pajamas1";
-				//$result = mysql_query($query);
-				//$rows = mysql_fetch_row($result);
+
 				$priceall = 0;
 				$query2 = "SELECT * FROM buyclients WHERE orderclients = '$row[0]'";	
 				$resultitem = $foo_mysgli->mysql_query($query2);

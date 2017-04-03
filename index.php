@@ -144,10 +144,6 @@ END;
 				</div>
 			</footer></br>
 END;
-			//print_r(" session_id()= " . session_id());
-			//if(isset($_COOKIE["mobcook"])) print_r(" mobcook= " . $_COOKIE["mobcook"]);
-			//if(!empty($this->idpost)) print_r(" idpost= " . $this->idpost);
-			//if(isset($_SESSION["sesgoodsid"])) print_r(" sesgoodsid= " . $_SESSION["sesgoodsid"]);
 		}
 	}
 ?>
@@ -312,17 +308,6 @@ $result = $foo_mysgli->mysql_query($query);
 
 if ( !$result) die();//die ("Сбой при доступе к базе данных: " . mysql_error());
 $rows = $foo_mysgli->mysql_num_rows($result);
-
-/*if(isset($_GET['namesurname']) || isset($_GET['city']) || isset($_GET['tel']) || isset($_GET['email'])) { 
-	$namesurname = substr($foo_mysgli->sanitizeMySQL(trim($_GET['namesurname'])), 0, 30); 
-    $city =  substr($foo_mysgli->sanitizeMySQL(trim($_GET['city'])), 0, 30); 
-	$tel =  substr($foo_mysgli->sanitizeMySQL(trim($_GET['tel'])), 0, 13); 
-	$email =  substr($foo_mysgli->sanitizeMySQL(trim($_GET['email'])), 0, 30);
-	$_SESSION["namesurname"] = $namesurname;
-	$_SESSION["city"] = $city;
-	$_SESSION["tel"] = $tel;
-	$_SESSION["email"] = $email;
-}*/
 
 if(isset($_GET["socnet"])){
 	echo <<<END
@@ -605,40 +590,6 @@ END;
 					</div>				
 END;
 ?>
-
-<!--	<a href="#"
-   onclick="this.href='https://vk.com/share.php?url='+window.location.href+window.location.hash+'&title='+document.title">
-   <img src="./m/elements/vk_rus.png" alt="ВКонтакте"></a> -->
-   
-	<!--<section class="ss">
-		<div class="subscriptiontxt"> Подписаться </div>
-		<div class="vk">
-			<script type="text/javascript">
-				document.write(VK.Share.button(false,{type: "custom", text: "<img src=\"./m/elements/vk_rus.png\" width=\"32\" height=\"32\" />"}));
-			</script>
-		</div>
-		
-		<div class="fb">
-			<a href="#"
-				onclick="this.href='http://www.facebook.com/share.php?u='+window.location.href+window.location.hash">
-			<img src="./m/elements/facebook.png" alt="Facebook" width=32 height=32></a>
-		</div>
-		
-		<div class="tw">
-			<a href="#" onclick="this.href='http://twitter.com/timeline/home?status='+document.title+'%20'+window.location.href+window.location.hash">
-			<img src="./m/elements/twitter.png" alt="Twitter" width=32 height=32></a>
-		</div> 
-		
-		<div class="subscription">
-			<a href="#" onclick="return addSoc(1);" title="Twitter"><img src="./m/elements/twitter.png" width=32 height=32></a>
-			<a href="#" onclick="return addSoc(2);" title="Facebook"><img src="./m/elements/facebook.png" width=32 height=32></a>
-			<a href="#" onclick="return addSoc(3);" title="Vkontakte"><img src="./m/elements/vk_rus.png" width=32 height=32></a>
-			<a href="#" onclick="return addSoc(4);" title="Одноклассники.ru"><img src="./m/elements/odnoklassniki.png" width=32 height=32></a>
-			<a href="#" onclick="return addSoc(5);" title="livejournal"><img src="./m/elements/livejournal.png" width=32 height=32></a>
-			<a href="#" onclick="return addSoc(6);" title="Яндекс"><img src="./m/elements/yandex.png" width=32 height=32></a>
-			<a href="#" onclick="return addSoc(7);" title="Мой мир"><img src="./m/elements/mail.png" width=32 height=32></a>
-		</div>
-	</section> -->
 	
 	<?php
   $wall = file_get_contents("http://api.vk.com/method/wall.get?v=5.3&filter=others&domain=id124540301&count=5"); // Отправляем запрос
@@ -646,52 +597,22 @@ END;
   $wall = json_decode($wall); // Преобразуем JSON-строку в массив
   $wall = $wall->response->items; // Получаем массив комментариев
   for ($i = 0; $i < count($wall); $i++) {
-//    echo "<p><b>".($i + 1)."</b>. <i>".$wall[$i]->text."</i><br /><span>".date("Y-m-d H:i:s", $wall[$i]->date)."</span></p>"; // Выводим записи
+
   }
-//  $new_wall = file_get_contents("http://api.vk.com/method/wall.post?v=5.3&ovner_id=-124540301&massage='Новая запись'");
-//  print_r("new_wall = " . $new_wall);
 
 ?>
 
 <?php
 	if(isset($_GET['code']))
 	{
-		//sleep(1);
-		//$code = $foo_mysgli->sanitizeMySQL($_GET['code']);
 		$code = $_GET['code'];
-//		print_r("code= " . $code);
-//		echo "</br></br>";
-		
-		/*$access_token = file_get_contents("https://api.vk.com/oauth/access_token?client_id=4857278&client_secret=GccTw54ju21H0Y92QPFw&code=$code&redirect_uri=http://pajamas.esy.es/index.php"); // Отправляем запрос
-		//print_r($access_token);
-		$access_token = json_decode($access_token); // Преобразуем JSON-строку в массив
-		//$access_token = $access_token->response->items; // Получаем массив комментариев
-		//print_r($access_token);
-		echo "</br></br>";
-		foreach($access_token as $k=>$v){
-			echo $k . ": " . $v . "</br></br>";
-		}*/
-		
-//		echo <<<END
-//		<a href="https://api.vk.com/oauth/access_token?client_id=4857278&client_secret=GccTw54ju21H0Y92QPFw&code=$code&redirect_uri=http://pajamas.esy.es/index.php">Получить access_token из VK</a>
-//END;
-		
-		//echo "<script>authvkajx()</script>";
-		//echo " access_token= <div id='access_token'></div>";
 	} 
 ?>
 
 <?php
 	if(isset($_GET['access_token']))
 	{
-		
-//		echo "</br></br>";
 		$access_token = $_GET['access_token'];
-//		print_r("access_token= " . $access_token);
-//		echo "</br></br>";
-		foreach($access_token as $k=>$v){
-//			echo $k . ": " . $v . "</br></br>";
-		}
 	} 
 ?>
 
@@ -704,13 +625,6 @@ END;
 				curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 				curl_setopt($ch, CURLOPT_TIMEOUT, 30);
 				curl_setopt($ch, CURLOPT_HTTPGET, TRUE);
-				/*curl_setopt($ch, CURLOPT_POSTFIELDS, array(
-	
-					"client_id"      =>   "4857278",
-					"client_secret"          =>   "GccTw54ju21H0Y92QPFw",
-					"code"        =>   "$code",
-					"redirect_uri"        =>   "http://pajamas.esy.es/index.php"
-						)); */
 				$body = curl_exec($ch);
 				curl_close($ch);
 //				print_r("body= " . $body);
@@ -719,11 +633,7 @@ END;
 	
 <?php
 	$scope = 'offline,notes,nohttps';//65536 + 2048;	
-/*	echo <<<END
-		<a href="https://oauth.vk.com/authorize?v=5.29&client_id=4857278&redirect_uri=http://pajamas.esy.es/index.php&scope=$scope&display=page">Разрешить приложению Pajamas работать с моими данными из VK</a>
-		</br></br>
-END;
-*/	
+
 	if(isset($_GET['error']) || isset($_GET['error_description']))
 	{
 		$error = $_GET['error'];
@@ -922,33 +832,6 @@ function getBrowser()
         $ub = "Netscape"; 
     } 
     
-  /*  // finally get the correct version number
-    $known = array('Version', $ub, 'other');
-    $pattern = '#(?<browser>' . join('|', $known) .
-    ')[/ ]+(?<version>[0-9.|a-zA-Z.]*)#';
-    if (!preg_match_all($pattern, $u_agent, $matches)) {
-        // we have no matching number just continue
-    }
-    
-    // see how many we have
-    $i = count($matches['browser']);
-    if ($i != 1) {
-        //we will have two since we are not using 'other' argument yet
-        //see if version is before or after the name
-        if (strripos($u_agent,"Version") < strripos($u_agent,$ub)){
-            $version= $matches['version'][0];
-        }
-        else {
-            $version= $matches['version'][1];
-        }
-    }
-    else {
-        $version= $matches['version'][0];
-    }
-    
-    // check if we have a number
-    if ($version==null || $version=="") {$version="?";} */
-    
     return array(
         'userAgent' => $u_agent,
         'name'      => $bname,
@@ -958,11 +841,6 @@ function getBrowser()
 		'system'    => $system
     );	
 } 
-
-// now try it
-//$ua=getBrowser();
-//$yourbrowser= "Your browser: " . $ua['name'] . " " . $ua['version'] . " on " .$ua['platform'] . " reports: " . " System - " . $ua['system'] . "<br >" . $ua['userAgent'];
-//print_r($yourbrowser);
 
 function device($u_agent)
 {

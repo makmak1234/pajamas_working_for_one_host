@@ -29,13 +29,7 @@ if(isset($_GET["exchrtv"]) && isset($_GET["elem"])){
 	$exchrtv = $foo_mysgli->sanitizeString($_GET["exchrtv"]);
 	$elem = $foo_mysgli->sanitizeString($_GET["elem"]);
 	//print_r(" exchrtv= " . $exchrtv . "elem= " . $elem);
-	/*if(isset($_GET["index"])){
-		$index =  sanitizeString($_GET["index"]);
-		if($exchrtv == 8 && $index == "sal") $exchrtv = 2;
-		if($exchrtv == 9 && $index == "sal") $exchrtv = 7;
-		if($exchrtv == 2 && $index == "ret") $exchrtv = 8;
-		if($exchrtv == 7 && $index == "ret") $exchrtv = 9;
-	}*/
+	
 	if($exchrtv == "true") $exchrtv = 1;
 	else if($exchrtv == "false") $exchrtv = 0;
 	
@@ -61,9 +55,7 @@ if(isset($_GET["exchrtv"]) && isset($_GET["elem"])){
 			$inputgoodsid = $foo_mysgli->sanitizeString($_GET["inputgoodsid"]);
 			$nameinp = "inputgoodsid";
 		}
-		//$mobcook = $_COOKIE["mobcook"];
-		//if($mobcook == "1") $mydir = $dirpajsm;
-		//if($mobcook == "0") $mydir = $dirpajs;
+		
 		$mydir = $dirpajs;
 	$valcook = "none";
 	if(isset($_SESSION["valcook"]))$valcook = $_SESSION["valcook"];//(isset($_COOKIE["valcook"]))$valcook = $_COOKIE["valcook"];
@@ -82,8 +74,6 @@ END;
 }
 
 if(isset($_POST["organiz"])){
-	//$dirpajs .= ".";
-	//setcookie("valcook", "1", 0, "", $dirpajs, false, true);
 	
 	$organiz = substr($foo_mysgli->sanitizeMySQL(trim($_POST['organiz'])), 0, 30); 
 	$city =  substr($foo_mysgli->sanitizeMySQL(trim($_POST['city'])), 0, 30); 
@@ -93,10 +83,7 @@ if(isset($_POST["organiz"])){
 	$mypassa = explode(" ", $organiz);
 	$mypass = $mypassa[0];
 	$mypass = ltrim($mypass);
-	//print($mypass);	
-	//$mypass = strtolower($mypass);
-	//if(strlen($mypass) > 5) $mypass = substr($mypass, 0, 5);
-	//print($mypass);
+	
 	$mypass .= rand(10,99);
 	
 	//создаём таблицу регистрации оптовиков
